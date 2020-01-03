@@ -5,5 +5,5 @@ GROUP BY Answers.Id, Answers.UserId)
 
 SELECT ProgramUsers.Id, ProgramUsers.FirstName, ProgramUsers.LastName, COUNT(UsersAnswersLikes.LikesQty) as LikedAnswers
 FROM ProgramUsers
-JOIN UsersAnswersLikes ON UsersAnswersLikes.UserId= ProgramUsers.Id
+JOIN UsersAnswersLikes ON UsersAnswersLikes.UserId = ProgramUsers.Id
 GROUP BY ProgramUsers.Id, ProgramUsers.FirstName, ProgramUsers.LastName

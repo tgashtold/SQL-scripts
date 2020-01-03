@@ -1,4 +1,4 @@
-SELECT ProgramUsers.Id as UserId, ProgramUsers.FirstName, ProgramUsers.LastName,  COUNT(
+SELECT ProgramUsers.Id AS UserId, ProgramUsers.FirstName, ProgramUsers.LastName,  COUNT(
 CASE
     WHEN Questions.IsClosed =1 THEN 1
     ELSE NULL
