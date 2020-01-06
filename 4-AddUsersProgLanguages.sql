@@ -1,6 +1,10 @@
+USE ProgAssistant
+
+GO
+
 CREATE OR ALTER PROCEDURE AddUsersProgLanguages
-		@UserId NVARCHAR(20),
-		@ProgLanguageId INT
+	@UserId NVARCHAR(20),
+	@ProgLanguageId INT
 AS
 BEGIN
 	IF NOT EXISTS (
@@ -10,6 +14,8 @@ BEGIN
 	INSERT INTO UsersProgLanguages(UserId, ProgLanguageId)
 	VALUES(@UserId, @ProgLanguageId)
 END
+
+GO
 
 EXEC AddUsersProgLanguages '1userid', 2
 EXEC AddUsersProgLanguages '1userid', 3

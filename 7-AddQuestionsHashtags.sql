@@ -1,8 +1,15 @@
+USE ProgAssistant
+
+GO
+
 CREATE OR ALTER PROCEDURE AddQuestionsHashtags
-		@QuestionId NVARCHAR(20),
-		@HashtagId INT
+	@Hashtag NVARCHAR(50),
+	@QuestionId NVARCHAR(20)
 AS
 BEGIN
+	DECLARE @HashtagId INT;
+	SET @HashtagId = (SELECT Id FROM Hashtags WHERE Hashtag = @Hashtag);
+
 	IF NOT EXISTS (
 		SELECT QuestionId, HashtagId
 		FROM QuestionsHashtags
@@ -11,14 +18,15 @@ BEGIN
 	VALUES(@HashtagId, @QuestionId)
 END
 
+GO
 
-EXEC AddQuestionsHashtags 1, '1questionId'
-EXEC AddQuestionsHashtags 2, '1questionId'
-EXEC AddQuestionsHashtags 4, '2questionId'
-EXEC AddQuestionsHashtags 6, '2questionId'
-EXEC AddQuestionsHashtags 3, '3questionId'
-EXEC AddQuestionsHashtags 5, '4questionId'
-EXEC AddQuestionsHashtags 2, '5questionId'
-EXEC AddQuestionsHashtags 3, '6questionId'
-EXEC AddQuestionsHashtags 5, '1questionId'
-EXEC AddQuestionsHashtags 1, '2questionId'
+EXEC AddQuestionsHashtags 'datpe', '1questionId'
+EXEC AddQuestionsHashtags 'defaultvalue', '1questionId'
+EXEC AddQuestionsHashtags 'createrequest', '2questionId'
+EXEC AddQuestionsHashtags 'filterbydate', '2questionId'
+EXEC AddQuestionsHashtags 'boolean', '3questionId'
+EXEC AddQuestionsHashtags 'deleteMatches', '4questionId'
+EXEC AddQuestionsHashtags 'filterbydate', '5questionId'
+EXEC AddQuestionsHashtags 'deleteMatches', '6questionId'
+EXEC AddQuestionsHashtags 'filterbydate', '1questionId'
+EXEC AddQuestionsHashtags 'defaultvalue', '2questionId'

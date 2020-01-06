@@ -1,3 +1,7 @@
+USE ProgAssistant
+
+GO
+
 CREATE OR ALTER PROCEDURE AddProgLanguage
 	@Language NVARCHAR(30)
 AS
@@ -9,6 +13,8 @@ BEGIN
 	INSERT INTO ProgLanguages(Language)
 	VALUES(@Language)
 END
+
+GO
 
 EXEC AddProgLanguage 'Java'
 EXEC AddProgLanguage 'JS'

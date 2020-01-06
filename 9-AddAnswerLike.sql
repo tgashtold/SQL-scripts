@@ -1,6 +1,10 @@
+USE ProgAssistant
+
+GO
+
 CREATE OR ALTER PROCEDURE AddAnswerLike
-		@UserId NVARCHAR(20),
-		@AnswerId NVARCHAR(20)
+	@UserId NVARCHAR(20),
+	@AnswerId NVARCHAR(20)
 AS
 BEGIN
 	IF NOT EXISTS (
@@ -10,6 +14,8 @@ BEGIN
 	INSERT INTO AnswersLikes (UserId, AnswerId)
 	VALUES(@UserId, @AnswerId)
 END
+
+GO
 
 EXEC AddAnswerLike '4userid','1answerId'
 EXEC AddAnswerLike '3userid','2answerId'

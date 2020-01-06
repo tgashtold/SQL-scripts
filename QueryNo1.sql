@@ -1,6 +1,5 @@
 WITH UsersQuestionsQty AS (
-	SELECT UserId, 
-	COUNT(*) as QuestionsQty
+	SELECT UserId, COUNT(*) as QuestionsQty
 	FROM Questions
 	GROUP BY UserId
 )
@@ -8,8 +7,10 @@ WITH UsersQuestionsQty AS (
 SELECT * 
 FROM ProgramUsers
 WHERE ProgramUsers.Id=SOME(
-	SELECT UserId FROM UsersQuestionsQty
+	SELECT UserId 
+	FROM UsersQuestionsQty
 	WHERE QuestionsQty=(
-		SELECT MAX(QuestionsQty) FROM UsersQuestionsQty)
+		SELECT MAX(QuestionsQty) 
+		FROM UsersQuestionsQty)
 )
 

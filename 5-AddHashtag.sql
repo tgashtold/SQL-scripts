@@ -1,3 +1,7 @@
+USE ProgAssistant
+
+GO
+
 CREATE OR ALTER PROCEDURE AddHashtag
 	@Hashtag NVARCHAR(50)
 AS
@@ -9,6 +13,8 @@ BEGIN
 	INSERT INTO Hashtags(Hashtag)
 	VALUES(@Hashtag)
 END
+
+GO 
 
 EXEC AddHashtag 'datpe'
 EXEC AddHashtag 'defaultvalue'
