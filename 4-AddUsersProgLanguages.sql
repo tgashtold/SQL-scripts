@@ -4,9 +4,12 @@ GO
 
 CREATE OR ALTER PROCEDURE AddUsersProgLanguages
 	@UserId NVARCHAR(20),
-	@ProgLanguageId INT
+	@ProgLanguage NVARCHAR(30)
 AS
 BEGIN
+	DECLARE @ProgLanguageId INT;
+	SET @ProgLanguageId=(SELECT Id FROM ProgLanguages WHERE Language = @ProgLanguage)
+
 	IF NOT EXISTS (
 		SELECT *
 		FROM UsersProgLanguages
@@ -17,12 +20,11 @@ END
 
 GO
 
-EXEC AddUsersProgLanguages '1userid', 2
-EXEC AddUsersProgLanguages '1userid', 3
-EXEC AddUsersProgLanguages '1userid', 7
-EXEC AddUsersProgLanguages '2userid', 1
-EXEC AddUsersProgLanguages '2userid', 4
-EXEC AddUsersProgLanguages '3userid', 2
-EXEC AddUsersProgLanguages '4userid', 3
-EXEC AddUsersProgLanguages '4userid', 6
-EXEC AddUsersProgLanguages '4userid', 5
+EXEC AddUsersProgLanguages '1userid', 'Java'
+EXEC AddUsersProgLanguages '1userid', 'JS'
+EXEC AddUsersProgLanguages '1userid', 'Python'
+EXEC AddUsersProgLanguages '2userid', 'C#'
+EXEC AddUsersProgLanguages '2userid', 'TS'
+EXEC AddUsersProgLanguages '4userid', 'React'
+EXEC AddUsersProgLanguages '4userid', 'Python'
+EXEC AddUsersProgLanguages '4userid', 'TS'
