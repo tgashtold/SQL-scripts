@@ -21,7 +21,7 @@ EXEC AddWorkPosition 'Java Developer'
 EXEC AddWorkPosition 'Designer'
 EXEC AddWorkPosition 'Front-end Developer'
 EXEC AddWorkPosition 'Manager'
-
+EXEC AddWorkPosition 'IT-Manager'
 
 
 

@@ -29,4 +29,4 @@ EXEC AddUser '1userid', 'Ivan', 'Petrov', 'user1@mail.ru', 'password1', 2, 'Mana
 EXEC AddUser '2userid', 'Peter', 'Lomov', 'user2@mail.ru', 'password2', null, 'Java Developer'
 EXEC AddUser '3userid', 'Olga', 'Savina', 'user3@mail.ru', 'password3', 0, 'Front-end Developer'
 EXEC AddUser '4userid', 'Irina', 'Kostenko', 'user4@mail.ru', 'password4', 6, 'Designer'
-
+EXEC AddUser '5userid', 'Inga', 'Shubich', 'user5@mail.ru', 'password5', null, null
