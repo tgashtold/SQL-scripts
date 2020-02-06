@@ -33,7 +33,7 @@ BEGIN
 		FirstName NVARCHAR(30) NOT NULL,
 		LastName NVARCHAR(30) NOT NULL,
 		Email NVARCHAR(30) UNIQUE NOT NULL ,
-		Password NVARCHAR(70) UNIQUE NOT NULL,
+		Password NVARCHAR(100) UNIQUE NOT NULL,
 		WorkExperience TINYINT,
 		WorkPositionId INT REFERENCES WorkPosition (Id) ON DELETE CASCADE,
 		CONSTRAINT CK_ProgramUsers_Email CHECK(Email !=''),
